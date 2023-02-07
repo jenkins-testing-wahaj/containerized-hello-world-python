@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh 'python test.py'
       }
-      """smoke test"""
+      // """smoke test"""
       post {
         always {
           junit 'test-reports/*.xml'
