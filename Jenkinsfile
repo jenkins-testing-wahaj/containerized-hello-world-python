@@ -3,7 +3,7 @@ pipeline {
   registry = "default-route-openshift-image-registry.apps.tz-205307.cecc.ihost.com/jenkins/jenkins"
   dockerImage = ''
   }
-  agent { dockerfile true }
+  agent any
   stages {
     stage('Building the image'){
       steps{
