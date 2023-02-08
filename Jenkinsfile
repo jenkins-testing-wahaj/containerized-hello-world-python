@@ -7,9 +7,7 @@ pipeline {
   stages {
     stage('Building the image'){
       steps{
-        script{
-          dockerImage = docker.inside(registry)
-        }
+        sh "docker version"
       }
     }
   }
