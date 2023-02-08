@@ -13,7 +13,7 @@ pipeline {
       steps {
         echo 'Create Container Image'
         script {
-          openshift.withCluster('power9') {
+          openshift.withCluster('power9', 'user') {
             openshift.withProject("python-test") {
               def buildConfigExists = openshift.selector("bc", "containerized-hello-world-python").exists() 
               if(!buildConfigExists){ 
