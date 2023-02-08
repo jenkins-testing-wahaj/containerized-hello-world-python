@@ -13,7 +13,7 @@ pipeline {
       steps {
         echo 'Create Container Image'
         script {
-          oc.withCluster() {
+          openshift.withCluster('power9') {
             openshift.withProject("python-test") {
               def buildConfigExists = openshift.selector("bc", "containerized-hello-world-python").exists() 
               if(!buildConfigExists){ 
@@ -29,7 +29,7 @@ pipeline {
       steps {
         echo 'Deploying'
         script{
-          openshift.withCluster() { 
+          openshift.withCluster('power9') { 
             openshift.withProject("python-test") { 
             def deployment = openshift.selector("dc", "containerized-hello-world-python") 
             if(!deployment.exists()){ 
