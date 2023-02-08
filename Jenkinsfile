@@ -1,10 +1,12 @@
 pipeline {
   // agent { docker { image 'python:3.7.2' } }
-  agent { dockerfile true }
+  agent {
+        docker { image 'default-route-openshift-image-registry.apps.tz-205307.cecc.ihost.com/jenkins/jenkins' }
+    }
   stages {
     stage('build') {
       steps {
-        sh 'pip install -r requirements.txt'
+        sh 'pip3 install -r requirements.txt'
       }
     }
     stage('test') {
