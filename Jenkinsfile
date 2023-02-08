@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+    oc 'oc'
+  }
   stages {
     stage('Build') {
       steps {
@@ -10,7 +13,7 @@ pipeline {
       steps {
         echo 'Create Container Image'
         script {
-          openshift.withCluster() {
+          oc.withCluster() {
             openshift.withProject("python-test") {
               def buildConfigExists = openshift.selector("bc", "containerized-hello-world-python").exists() 
               if(!buildConfigExists){ 
