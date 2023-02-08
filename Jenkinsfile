@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Building the image'){
       steps{
-        sh "oc --version"
+        sh "docker version"
       }
     }
   }
