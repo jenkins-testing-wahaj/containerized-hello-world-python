@@ -3,15 +3,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Building..'
-        
-        // Add steps here
+        echo 'Building'        
       }
     }
     stage('Create Container Image') {
       steps {
-        echo 'Create Container Image..'
-        
+        echo 'Create Container Image'
         script {
 
           // Add steps here
@@ -21,12 +18,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        echo 'Deploying....'
-        script {
-
-          // Add steps here
-
-        }
+        echo 'Deploying'
       }
     }
   }
