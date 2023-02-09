@@ -16,9 +16,9 @@ pipeline {
           openshift.withCluster('power9', 'token') {
             openshift.withProject('python-test') {
               echo "Hello from project ${openshift.project()} in cluster ${openshift.cluster()}"
-              oc get pods
             } 
           }
+          def selector = openshift.selector("pods")
         }
       }
     }
