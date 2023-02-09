@@ -19,6 +19,7 @@ pipeline {
             } 
           }
           def selector = openshift.selector("pods")
+          selector.describe()
         }
       }
     }
