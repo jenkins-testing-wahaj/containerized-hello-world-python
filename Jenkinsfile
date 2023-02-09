@@ -16,6 +16,7 @@ pipeline {
           openshift.withCluster('power9', 'token') {
             openshift.withProject("python-test") {
               def buildConfigExists = openshift.selector("bc", "containerized-hello-world-python").exists() 
+              echo buildConfigExists
               if(!buildConfigExists){ 
                 openshift.newBuild("--name=containerized-hello-world-python", "--docker-image=default-route-openshift-image-registry.apps.tz-205307.cecc.ihost.com/python-test/containerized-hello-world-python", "--binary") 
               }
