@@ -2,7 +2,7 @@ pipeline {
   agent any
   tools{
     oc 'openshift'
-    docker 'docker'
+    dockerTool 'docker'
   }
   stages {
     stage('Build') {
