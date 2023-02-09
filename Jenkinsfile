@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools{
-    oc 'oc'
+    openshift 'openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit'
   }
   stages {
     stage('Build') {
