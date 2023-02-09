@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  withEnv(["PATH+OC=${tool 'oc'}"]) {
+  withEnv(["PATH+OC=${tool 'oc'}"])
   stages {
     stage('Build') {
       steps {
