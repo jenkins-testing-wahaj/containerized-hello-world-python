@@ -13,8 +13,8 @@ pipeline {
       steps {
         echo 'Create Container Image'
         script {
-          openshift.withCluster('power9', 'token') {
-            openshift.withProject('python-test') {
+          openshift.withCluster() {
+            openshift.withProject() {
               echo "Hello from project ${openshift.project()} in cluster ${openshift.cluster()}"
               def selector = openshift.selector("pods")
               selector.describe()
