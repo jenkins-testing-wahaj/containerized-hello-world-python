@@ -1,11 +1,8 @@
 pipeline {
   tools{
     oc 'openshift'
-    dockerTool 'dockerTool'
   }
-  agent { 
-    docker { image 'default-route-openshift-image-registry.apps.tz-205307.cecc.ihost.com/jenkins/jenkins' }
-  }
+  agent { dockerfile true }
   stages {
     stage('Build') {
       steps {
