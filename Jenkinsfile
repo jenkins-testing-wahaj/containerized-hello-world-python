@@ -12,6 +12,12 @@ pipeline {
 			}
 		
 		}
+    stage('Docker Build') {
+    	agent any
+      steps {
+      	sh 'docker build -t jenkins-testing-wahaj/containerized-hello-world-python:latest .'
+      }
+    }
     
   }
 }
